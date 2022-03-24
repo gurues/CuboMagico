@@ -1,0 +1,2341 @@
+[
+    {
+        "id": "24cd607d1e5e5138",
+        "type": "tab",
+        "label": "Compartidos",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1ef0bab1d20aa158",
+        "type": "mqtt in",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "topic": "Casa/Cubo_Magico/Estado",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 310,
+        "y": 200,
+        "wires": [
+            [
+                "f1a8b0045dad9376",
+                "c58ec0a6b8f6e7e9"
+            ]
+        ]
+    },
+    {
+        "id": "2c284ebb13f1b775",
+        "type": "mqtt out",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "topic": "Casa/Cubo_Magico/Control",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "",
+        "x": 1100,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "475dd0bfec63987b",
+        "type": "mqtt in",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "topic": "Casa/Cubo_Magico/Cara",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 310,
+        "y": 440,
+        "wires": [
+            [
+                "d7488d04172e1c83",
+                "6f55e162cd3b3a98"
+            ]
+        ]
+    },
+    {
+        "id": "52a7a956133fec6c",
+        "type": "mqtt in",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "topic": "Casa/Cubo_Magico/Bateria",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 800,
+        "y": 80,
+        "wires": [
+            [
+                "68c1e61a33f605db",
+                "84db9914dc26e674",
+                "63d206cf31eeb268"
+            ]
+        ]
+    },
+    {
+        "id": "33440a7cee94a006",
+        "type": "mqtt in",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "topic": "Casa/Cubo_Magico/Testamento",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 80,
+        "wires": [
+            [
+                "45f890aef97cd9a2"
+            ]
+        ]
+    },
+    {
+        "id": "45f890aef97cd9a2",
+        "type": "debug",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "f1a8b0045dad9376",
+        "type": "debug",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 310,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "d7488d04172e1c83",
+        "type": "debug",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 350,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "68c1e61a33f605db",
+        "type": "debug",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "0338bd86a0c10f93",
+        "type": "inject",
+        "z": "24cd607d1e5e5138",
+        "name": "RESET",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "R",
+        "payloadType": "str",
+        "x": 1070,
+        "y": 360,
+        "wires": [
+            [
+                "3a1575d47a51afaa"
+            ]
+        ]
+    },
+    {
+        "id": "c58ec0a6b8f6e7e9",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "Estado Cubo Mágico",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "alexa_media_last_called",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{payload}}\",\"data\":{\"type\":\"tts\"}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 600,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f55e162cd3b3a98",
+        "type": "switch",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "6",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 510,
+        "y": 480,
+        "wires": [
+            [
+                "2a9406e0643c0d33",
+                "edfb72a5b798bd93"
+            ],
+            [
+                "f6a9187b12682f1e",
+                "edfb72a5b798bd93"
+            ],
+            [
+                "ab808ef6bd1ed84d",
+                "edfb72a5b798bd93"
+            ],
+            [
+                "999862fa74b0d588",
+                "edfb72a5b798bd93"
+            ],
+            [
+                "6dabb289a5fd077a",
+                "edfb72a5b798bd93"
+            ],
+            [
+                "526fbcbfd8879fd8",
+                "edfb72a5b798bd93"
+            ]
+        ]
+    },
+    {
+        "id": "2a9406e0643c0d33",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "1 - Espera",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "alexa_media_last_called",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"Si no me das una orden en 30 segundos, me voy a dormir\",\"data\":{\"type\":\"tts\"}}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 690,
+        "y": 320,
+        "wires": [
+            [
+                "7a01659e2d613fd5"
+            ]
+        ]
+    },
+    {
+        "id": "7a01659e2d613fd5",
+        "type": "delay",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "30",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 720,
+        "y": 260,
+        "wires": [
+            [
+                "611b2d06eef3488b"
+            ]
+        ]
+    },
+    {
+        "id": "58b173d69ee6a79f",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 890,
+        "y": 380,
+        "wires": [
+            [
+                "7a01659e2d613fd5"
+            ]
+        ]
+    },
+    {
+        "id": "611b2d06eef3488b",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "GoToZZZ",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ZZZ",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 260,
+        "wires": [
+            [
+                "2c284ebb13f1b775"
+            ]
+        ]
+    },
+    {
+        "id": "65e503db2ba51d79",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "Bateria Baja",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "alexa_media",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{    \"message\": \"Cubo Mágico con bateria baja, ponerme a cargar\", \t     \"target\":[\"media_player.echo_dot_XXX\", \"media_player.echo_dot_YYY\", \"media_player.echo_dot_show_ZZZ\"],\t     \"data\": {        \"type\": \"tts\"    }\t}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1170,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d90dd8f918792db",
+        "type": "inject",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "96",
+        "payloadType": "str",
+        "x": 710,
+        "y": 140,
+        "wires": [
+            [
+                "84db9914dc26e674"
+            ]
+        ]
+    },
+    {
+        "id": "84db9914dc26e674",
+        "type": "function",
+        "z": "24cd607d1e5e5138",
+        "name": "toFloat",
+        "func": "var bateria = parseFloat(msg.payload);\nmsg.payload = bateria;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 140,
+        "wires": [
+            [
+                "fc8b92198260b171"
+            ]
+        ]
+    },
+    {
+        "id": "fc8b92198260b171",
+        "type": "switch",
+        "z": "24cd607d1e5e5138",
+        "name": "<=95 / 100",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "95",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "96",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 990,
+        "y": 140,
+        "wires": [
+            [
+                "65e503db2ba51d79"
+            ],
+            [
+                "cc419ce166040bd6"
+            ]
+        ]
+    },
+    {
+        "id": "63d206cf31eeb268",
+        "type": "ha-entity",
+        "z": "24cd607d1e5e5138",
+        "name": "cubo magico bateria",
+        "server": "",
+        "version": 2,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityType": "sensor",
+        "config": [
+            {
+                "property": "name",
+                "value": "cubo_magico_bateria"
+            },
+            {
+                "property": "device_class",
+                "value": "battery"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "%"
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            },
+            {
+                "property": "last_reset",
+                "value": ""
+            }
+        ],
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [],
+        "resend": true,
+        "outputLocation": "payload",
+        "outputLocationType": "none",
+        "inputOverride": "allow",
+        "outputOnStateChange": false,
+        "outputPayload": "",
+        "outputPayloadType": "str",
+        "x": 1060,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e0ff4348de93625",
+        "type": "mqtt out",
+        "z": "24cd607d1e5e5138",
+        "name": "HA - IR",
+        "topic": "cmnd/Casa/IR/IRsend",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "",
+        "x": 1200,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "5f222cef3dd8e7e9",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "Netflix",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"Protocol\":\"RC6\",\"Bits\":20,\"Data\":\"0x76\"}",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 840,
+        "wires": [
+            [
+                "2e0ff4348de93625"
+            ]
+        ]
+    },
+    {
+        "id": "2b71bb940592781f",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "PRIME-1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"Protocol\":\"RC6\",\"Bits\":20,\"Data\":\"0x54\"} ",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 920,
+        "wires": [
+            [
+                "1547fac3cacba66a",
+                "2e0ff4348de93625"
+            ]
+        ]
+    },
+    {
+        "id": "cc4635a22d02e83f",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "PRIME-2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"Protocol\":\"RC6\",\"Bits\":20,\"Data\":\"0x1005B\"}",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 920,
+        "wires": [
+            [
+                "b5d56c9c02ca3ed2",
+                "2e0ff4348de93625"
+            ]
+        ]
+    },
+    {
+        "id": "f04ba56d6f376b57",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "PRIME-3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"Protocol\":\"RC6\",\"Bits\":20,\"Data\":\"0x5C\"}",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 960,
+        "wires": [
+            [
+                "9b7ef3392001b297",
+                "2e0ff4348de93625"
+            ]
+        ]
+    },
+    {
+        "id": "1547fac3cacba66a",
+        "type": "delay",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 920,
+        "y": 920,
+        "wires": [
+            [
+                "cc4635a22d02e83f"
+            ]
+        ]
+    },
+    {
+        "id": "b5d56c9c02ca3ed2",
+        "type": "delay",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 760,
+        "y": 960,
+        "wires": [
+            [
+                "f04ba56d6f376b57"
+            ]
+        ]
+    },
+    {
+        "id": "31625c3d6e14416f",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "off luz sala",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.luz_sala"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 770,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f6284b4ceb1812c2",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "on lampara",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.luz_lampara"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 770,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b143fbd821df361",
+        "type": "join",
+        "z": "24cd607d1e5e5138",
+        "name": "tª pekes",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "1",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 960,
+        "y": 1020,
+        "wires": [
+            [
+                "9ce51be7228c0913"
+            ]
+        ]
+    },
+    {
+        "id": "eb7b7c79d229f013",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Temperatura pekes ",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 1020,
+        "wires": [
+            [
+                "50a8ebe857233379",
+                "7b143fbd821df361"
+            ]
+        ]
+    },
+    {
+        "id": "cee3f5f8f44f4159",
+        "type": "api-current-state",
+        "z": "24cd607d1e5e5138",
+        "name": "tª pekes",
+        "server": "",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.temperatura_portable",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 920,
+        "y": 1080,
+        "wires": [
+            [
+                "7b143fbd821df361"
+            ]
+        ]
+    },
+    {
+        "id": "d3083b247619cc21",
+        "type": "inject",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 620,
+        "y": 980,
+        "wires": [
+            [
+                "eb7b7c79d229f013",
+                "33e98d306e008616",
+                "8c4d1982af0437e4"
+            ]
+        ]
+    },
+    {
+        "id": "50a8ebe857233379",
+        "type": "delay",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "250",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 770,
+        "y": 1080,
+        "wires": [
+            [
+                "cee3f5f8f44f4159"
+            ]
+        ]
+    },
+    {
+        "id": "27f8254a4c9bbc48",
+        "type": "join",
+        "z": "24cd607d1e5e5138",
+        "name": "tª papas",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "1",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 960,
+        "y": 1120,
+        "wires": [
+            [
+                "6c324330e8c098ac"
+            ]
+        ]
+    },
+    {
+        "id": "33e98d306e008616",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": ", Temperatura papás ",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 1120,
+        "wires": [
+            [
+                "a9417237802b9add",
+                "27f8254a4c9bbc48"
+            ]
+        ]
+    },
+    {
+        "id": "6ad1d26d07f28086",
+        "type": "api-current-state",
+        "z": "24cd607d1e5e5138",
+        "name": "tª papas",
+        "server": "",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.temperatura_papas",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 920,
+        "y": 1180,
+        "wires": [
+            [
+                "27f8254a4c9bbc48"
+            ]
+        ]
+    },
+    {
+        "id": "a9417237802b9add",
+        "type": "delay",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "250",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 770,
+        "y": 1180,
+        "wires": [
+            [
+                "6ad1d26d07f28086"
+            ]
+        ]
+    },
+    {
+        "id": "fc819e04d0a3c4e2",
+        "type": "join",
+        "z": "24cd607d1e5e5138",
+        "name": "tª garaje",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "1",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 960,
+        "y": 1220,
+        "wires": [
+            [
+                "9d966064819c3ac8"
+            ]
+        ]
+    },
+    {
+        "id": "8c4d1982af0437e4",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": ", Temperatura garaje ",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 1220,
+        "wires": [
+            [
+                "a0edfa56a801a617",
+                "fc819e04d0a3c4e2"
+            ]
+        ]
+    },
+    {
+        "id": "a87032e4993d7e64",
+        "type": "api-current-state",
+        "z": "24cd607d1e5e5138",
+        "name": "tª garaje",
+        "server": "",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.temperatura_garaje",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 920,
+        "y": 1280,
+        "wires": [
+            [
+                "fc819e04d0a3c4e2"
+            ]
+        ]
+    },
+    {
+        "id": "a0edfa56a801a617",
+        "type": "delay",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "250",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 770,
+        "y": 1280,
+        "wires": [
+            [
+                "a87032e4993d7e64"
+            ]
+        ]
+    },
+    {
+        "id": "9ce51be7228c0913",
+        "type": "join",
+        "z": "24cd607d1e5e5138",
+        "name": "Tª casa",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "5",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1120,
+        "y": 1020,
+        "wires": [
+            [
+                "7a488949b1c6b090"
+            ]
+        ]
+    },
+    {
+        "id": "6c324330e8c098ac",
+        "type": "delay",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "125",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1110,
+        "y": 1180,
+        "wires": [
+            [
+                "9ce51be7228c0913"
+            ]
+        ]
+    },
+    {
+        "id": "9d966064819c3ac8",
+        "type": "delay",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "250",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1110,
+        "y": 1220,
+        "wires": [
+            [
+                "9ce51be7228c0913"
+            ]
+        ]
+    },
+    {
+        "id": "7a488949b1c6b090",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "tª casa",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "alexa_media_last_called",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{payload}}\",\"data\":{\"type\":\"tts\"}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1130,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab808ef6bd1ed84d",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "3 - Netflix",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "script",
+        "service": "activate_alexa_actionable_notification",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"text\":\"¿Quieres ver Netflix?\",\"event_id\":\"netflix\",\"alexa_device\":\"{{ flow.alexa_device }}\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 680,
+        "y": 440,
+        "wires": [
+            [
+                "58b173d69ee6a79f"
+            ]
+        ]
+    },
+    {
+        "id": "f6a9187b12682f1e",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "2 - Ambiente Salón",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "script",
+        "service": "activate_alexa_actionable_notification",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"text\":\"¿Quieres ambientar el salón para ver la TV?\",\"event_id\":\"ambiente\",\"alexa_device\":\"{{ flow.alexa_device }}\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 710,
+        "y": 380,
+        "wires": [
+            [
+                "58b173d69ee6a79f"
+            ]
+        ]
+    },
+    {
+        "id": "999862fa74b0d588",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "4 - Prime",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "script",
+        "service": "activate_alexa_actionable_notification",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"text\":\"¿Quieres ver PrainTV?\",\"event_id\":\"prime\",\"alexa_device\":\"{{ flow.alexa_device }}\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 680,
+        "y": 500,
+        "wires": [
+            [
+                "58b173d69ee6a79f"
+            ]
+        ]
+    },
+    {
+        "id": "6dabb289a5fd077a",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "5 - Temperaturas",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "script",
+        "service": "activate_alexa_actionable_notification",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"text\":\"¿Quieres saber las temperaturas de la casa?\",\"event_id\":\"temperatura\",\"alexa_device\":\"{{ flow.alexa_device }}\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 710,
+        "y": 600,
+        "wires": [
+            [
+                "58b173d69ee6a79f"
+            ]
+        ]
+    },
+    {
+        "id": "526fbcbfd8879fd8",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "6 - Bateria",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "script",
+        "service": "activate_alexa_actionable_notification",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"text\":\"¿Quieres obtener valores o cargar la batería de Cubo Mágico?\",\"event_id\":\"bateria\",\"alexa_device\":\"{{ flow.alexa_device }}\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 690,
+        "y": 660,
+        "wires": [
+            [
+                "58b173d69ee6a79f"
+            ]
+        ]
+    },
+    {
+        "id": "10661b7728049ea0",
+        "type": "server-events",
+        "z": "24cd607d1e5e5138",
+        "name": "Acciones Cubo Mágico",
+        "server": "",
+        "version": 1,
+        "event_type": "alexa_actionable_notification",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "waitForRunning": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "x": 340,
+        "y": 860,
+        "wires": [
+            [
+                "6bfd24e0394dfe2d",
+                "717323d0a400b0f1"
+            ]
+        ]
+    },
+    {
+        "id": "6bfd24e0394dfe2d",
+        "type": "debug",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "717323d0a400b0f1",
+        "type": "switch",
+        "z": "24cd607d1e5e5138",
+        "name": "ACCIONES CUBO MAGICO",
+        "property": "payload.event.event_id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ambiente",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "netflix",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "prime",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "temperatura",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "bateria",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 380,
+        "y": 960,
+        "wires": [
+            [
+                "01a14e869e5e1ca0"
+            ],
+            [
+                "3ce7d63d8a9ace87"
+            ],
+            [
+                "ee61a3378e4e5ad1"
+            ],
+            [
+                "49adc3255080ed29"
+            ],
+            [
+                "3741c598d91ce070"
+            ]
+        ]
+    },
+    {
+        "id": "49adc3255080ed29",
+        "type": "switch",
+        "z": "24cd607d1e5e5138",
+        "name": "5 - SI",
+        "property": "payload.event.event_response",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ResponseYes",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 1120,
+        "wires": [
+            [
+                "eb7b7c79d229f013",
+                "33e98d306e008616",
+                "8c4d1982af0437e4"
+            ]
+        ]
+    },
+    {
+        "id": "3ce7d63d8a9ace87",
+        "type": "switch",
+        "z": "24cd607d1e5e5138",
+        "name": "3 - SI",
+        "property": "payload.event.event_response",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ResponseYes",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 840,
+        "wires": [
+            [
+                "5f222cef3dd8e7e9"
+            ]
+        ]
+    },
+    {
+        "id": "01a14e869e5e1ca0",
+        "type": "switch",
+        "z": "24cd607d1e5e5138",
+        "name": "2 - SI",
+        "property": "payload.event.event_response",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ResponseYes",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 760,
+        "wires": [
+            [
+                "31625c3d6e14416f",
+                "f6284b4ceb1812c2"
+            ]
+        ]
+    },
+    {
+        "id": "ee61a3378e4e5ad1",
+        "type": "switch",
+        "z": "24cd607d1e5e5138",
+        "name": "4 - SI",
+        "property": "payload.event.event_response",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ResponseYes",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 880,
+        "wires": [
+            [
+                "064056c9ce8e0ad6"
+            ]
+        ]
+    },
+    {
+        "id": "3741c598d91ce070",
+        "type": "switch",
+        "z": "24cd607d1e5e5138",
+        "name": "6 - NO/SI",
+        "property": "payload.event.event_response",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ResponseNo",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ResponseYes",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 620,
+        "y": 1360,
+        "wires": [
+            [
+                "2a9406e0643c0d33"
+            ],
+            [
+                "c4fa0ff679620db4"
+            ]
+        ]
+    },
+    {
+        "id": "84a3e03677a05dad",
+        "type": "comment",
+        "z": "24cd607d1e5e5138",
+        "name": "ACCIONES A LAS ORDENES CUBO MAGICO",
+        "info": "",
+        "x": 380,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "c4fa0ff679620db4",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "Espera al 100%",
+        "server": "999a00e.7c284",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "alexa_media_last_called",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"Enviando valores de bateía o esperando a que Cubo Mágico tenga 100 por 100 de batería\",\"data\":{\"type\":\"tts\"}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 820,
+        "y": 1360,
+        "wires": [
+            [
+                "1f2556d318da3bbc"
+            ]
+        ]
+    },
+    {
+        "id": "cc419ce166040bd6",
+        "type": "switch",
+        "z": "24cd607d1e5e5138",
+        "name": "flow.cara=6",
+        "property": "cara",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "6",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1170,
+        "y": 180,
+        "wires": [
+            [
+                "5ac8cfd8210e9157"
+            ]
+        ]
+    },
+    {
+        "id": "1f2556d318da3bbc",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "flow.cara=6",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cara",
+                "pt": "flow",
+                "to": "6",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 1360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "edfb72a5b798bd93",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "flow.cara=0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "cara",
+                "pt": "flow",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "447f0b2485675380",
+        "type": "delay",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "6",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 920,
+        "y": 880,
+        "wires": [
+            [
+                "2b71bb940592781f"
+            ]
+        ]
+    },
+    {
+        "id": "064056c9ce8e0ad6",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "PRIME-0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"Protocol\":\"RC6\",\"Bits\":20,\"Data\":\"0x1000C\"} ",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 880,
+        "wires": [
+            [
+                "447f0b2485675380",
+                "2e0ff4348de93625"
+            ]
+        ]
+    },
+    {
+        "id": "9b7ef3392001b297",
+        "type": "delay",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "35",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1040,
+        "y": 960,
+        "wires": [
+            [
+                "1889d2550d137994"
+            ]
+        ]
+    },
+    {
+        "id": "1889d2550d137994",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "PRIME-4",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"Protocol\":\"RC6\",\"Bits\":20,\"Data\":\"0x1005C\"}",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1180,
+        "y": 960,
+        "wires": [
+            [
+                "2e0ff4348de93625"
+            ]
+        ]
+    },
+    {
+        "id": "5f2ee93d42a235d3",
+        "type": "inject",
+        "z": "24cd607d1e5e5138",
+        "name": "oscar",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Alexa del garaje seleccionada para interactuar con Cubo Mágico",
+        "payloadType": "str",
+        "x": 1070,
+        "y": 560,
+        "wires": [
+            [
+                "a2d4aec70c092f07",
+                "c5bc4fcd3e7da5f5"
+            ]
+        ]
+    },
+    {
+        "id": "737a50511da2f82c",
+        "type": "comment",
+        "z": "24cd607d1e5e5138",
+        "name": "Selección Alexa Notificación",
+        "info": "",
+        "x": 1120,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "8448d8e602746483",
+        "type": "inject",
+        "z": "24cd607d1e5e5138",
+        "name": "salon",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Alexa del salón seleccionada para interactuar con Cubo Mágico",
+        "payloadType": "str",
+        "x": 1070,
+        "y": 600,
+        "wires": [
+            [
+                "3d1019b1f70201f4",
+                "95e733ac24f558ee"
+            ]
+        ]
+    },
+    {
+        "id": "9ec031834af07f5d",
+        "type": "inject",
+        "z": "24cd607d1e5e5138",
+        "name": "pekes",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Alexa de los pekes seleccionada para interactuar con Cubo Mágico",
+        "payloadType": "str",
+        "x": 1070,
+        "y": 640,
+        "wires": [
+            [
+                "df2bd031d1a5bb26",
+                "b3fecd9023d62946"
+            ]
+        ]
+    },
+    {
+        "id": "a2d4aec70c092f07",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "oscar",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "alexa_media_echo_dot_de_XXX",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{payload}}\",\"data\":{\"type\":\"tts\"}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1250,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3d1019b1f70201f4",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "salon",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "alexa_media_echo_show_ZZZ",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{payload}}\",\"data\":{\"type\":\"tts\"}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1250,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "df2bd031d1a5bb26",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "pekes",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "alexa_media_echo_show_ZZZ",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{payload}}\",\"data\":{\"type\":\"tts\"}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1250,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "95e733ac24f558ee",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "alexa_device",
+                "pt": "flow",
+                "to": "media_player.echo_show_ZZZ",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c5bc4fcd3e7da5f5",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "alexa_device",
+                "pt": "flow",
+                "to": "media_player.echo_dot_de_XXX",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b3fecd9023d62946",
+        "type": "change",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "alexa_device",
+                "pt": "flow",
+                "to": "media_player.echo_dot_de_YYY",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e5a81c7a675a1105",
+        "type": "inject",
+        "z": "24cd607d1e5e5138",
+        "name": "6",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "6",
+        "payloadType": "str",
+        "x": 830,
+        "y": 1420,
+        "wires": [
+            [
+                "1f2556d318da3bbc"
+            ]
+        ]
+    },
+    {
+        "id": "5ac8cfd8210e9157",
+        "type": "function",
+        "z": "24cd607d1e5e5138",
+        "name": "carga",
+        "func": "var valor = msg.payload.toString();\nmsg.payload = \"Cubo Mágico con bateria al \" + valor + \" por 100 de carga\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 220,
+        "wires": [
+            [
+                "a5dc13ae29fcea1c"
+            ]
+        ]
+    },
+    {
+        "id": "a5dc13ae29fcea1c",
+        "type": "api-call-service",
+        "z": "24cd607d1e5e5138",
+        "name": "Carga Bateria",
+        "server": "",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "alexa_media_last_called",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{payload}}\",\"data\":{\"type\":\"tts\"}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1260,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "477e0ef2f97bfafc",
+        "type": "inject",
+        "z": "24cd607d1e5e5138",
+        "name": "IR A DORMIR",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "ZZZ",
+        "payloadType": "str",
+        "x": 1090,
+        "y": 400,
+        "wires": [
+            [
+                "3a1575d47a51afaa"
+            ]
+        ]
+    },
+    {
+        "id": "bef2eb2c6f60bc17",
+        "type": "inject",
+        "z": "24cd607d1e5e5138",
+        "name": "TIME_TO_SLEEP",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "TIME_TO_SLEEP=10800",
+        "payloadType": "str",
+        "x": 1110,
+        "y": 440,
+        "wires": [
+            [
+                "3a1575d47a51afaa"
+            ]
+        ]
+    },
+    {
+        "id": "d7f0af60900bb466",
+        "type": "inject",
+        "z": "24cd607d1e5e5138",
+        "name": "t_reinit",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "t_reinit=120",
+        "payloadType": "str",
+        "x": 1070,
+        "y": 480,
+        "wires": [
+            [
+                "3a1575d47a51afaa"
+            ]
+        ]
+    },
+    {
+        "id": "9f2dabedcf6244e7",
+        "type": "comment",
+        "z": "24cd607d1e5e5138",
+        "name": "Comados Cubo Mágico",
+        "info": "RESET          -->   Reinicia el ESP32\nIR A DORMIR    -->   ESP32 a Deep Sleep\nTIME_TO_SLEEP  -->   Salida auto de Deep Sleep en seg\nt_reinit       -->   Tiempo Max sin ordenes",
+        "x": 1100,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "aa32fc94d5c5f195",
+        "type": "link in",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "links": [
+            "3a1575d47a51afaa"
+        ],
+        "x": 925,
+        "y": 200,
+        "wires": [
+            [
+                "2c284ebb13f1b775"
+            ]
+        ]
+    },
+    {
+        "id": "3a1575d47a51afaa",
+        "type": "link out",
+        "z": "24cd607d1e5e5138",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "aa32fc94d5c5f195"
+        ],
+        "x": 1265,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "999a00e.7c284",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 2,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": false,
+        "heartbeatInterval": 30
+    }
+]
